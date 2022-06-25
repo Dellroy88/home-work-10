@@ -12,5 +12,15 @@ public class Main {
         //System.out.println("Название книги - " + book2.getBookName() + ", автор книги - " + book2.getAuthor().getName() + " " + book2.getAuthor().getSurname() + ", год издания - " + book2.getYearOfRelease());
         System.out.println(book1);
         System.out.println(book2);
+        if (book1.bookEquals(book2)) {
+            System.out.println("Эти книги одинаковые");
+        } else {
+            System.out.println("Эти книги разные");
+        }
+        if (book1.hashCode() == book2.hashCode()) {
+            System.out.println("У этих книг одинаковое место хранение");
+        } else {
+            System.out.println("У этих книг разное место хранение");
+        }
     }
 }
