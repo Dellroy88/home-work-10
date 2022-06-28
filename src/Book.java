@@ -26,6 +26,7 @@ public class Book {
     public void setYearOfRelease(int newYearOfRelease) {
         this.yearOfRelease = newYearOfRelease;
     }
+
     @Override
     public String toString() {
         return "Автор " + this.author + ", название книги " + this.bookName + ", год выпуска " + this.yearOfRelease;
@@ -33,6 +34,15 @@ public class Book {
 
     public boolean bookEquals(Object book) {
         Book books = (Book) book;
-        return this.getBookName() == books.getBookName();
+        if (this == book) return true;
+        else if (this.bookName == books.getBookName() && this.yearOfRelease == books.yearOfRelease) return true;
+        else
+            return false;
+
     }
+    @Override
+    public int hashCode() {
+        return this.bookName.hashCode() + this.author.hashCode();
+    }
+
 }
